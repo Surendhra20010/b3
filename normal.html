@@ -87,6 +87,7 @@
         <button onclick="appendDecimal()">.</button>
         <button class="operator" onclick="calculateResult()">=</button>
         <button class="operator" onclick="appendOperator('+')">+</button>
+        <button onclick="backspace()">Del</button>
       </div>
     </div>
 
@@ -114,6 +115,11 @@
         displayValue = "";
         updateDisplay();
       }
+
+      function backspace() {
+        let display = document.getElementById('display');
+        display.value = display.value.slice(0, -1);
+    }
 
       function calculateResult() {
         try {
